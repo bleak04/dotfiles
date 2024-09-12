@@ -1,0 +1,14 @@
+image=~/Pictures/wallpapers/black-sphere-2560x1440.jpg
+show-failed-attempts
+ignore-empty-password
+font="TerminessNerdFont"
+
+clock
+timestr=%I:%M %p
+datestr=%a, %B %e
+
+indicator
+indicator-idle-visible
+indicator-radius=240
+indicator-thickness=20
+indicator-caps-lock
