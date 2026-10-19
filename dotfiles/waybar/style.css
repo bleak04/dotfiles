@@ -1,13 +1,19 @@
+/* =============================================================================
+   TOKYO NIGHT MATTE - CAPSULE EDITION
+   ============================================================================= */
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Iosevka, Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-family: "JetBrains Mono Nerd Font", "JetBrainsMono NF", "Inter Nerd Font", "Font Awesome 6 Free", FontAwesome, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 0px;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
 }
 
+/* Base Bar Window Styling */
 window#waybar {
-    background-color: rgba(25, 25, 25, 1.0);
-    border-bottom: 3px solid rgba(58, 59, 61, 1);
-    color: #ffffff;
+    background-color: #16161E;
+    color: #C0CAF5;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -16,265 +22,211 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
+window#waybar.empty #window {
     background-color: transparent;
 }
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
 
-window#waybar.termite {
-    background-color: #3F3F3F;
+/* Section Margins */
+.modules-left {
+    margin: 4px 0 4px 10px;
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+.modules-center {
+    margin: 4px 0;
+}
+
+.modules-right {
+    margin: 4px 10px 4px 0;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
     border: none;
-    border-radius: 0;
+    box-shadow: none;
+    background-image: none;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+/* =============================================================================
+   WORKSPACES MODULE (CAPSULE ROUNDED + CLEAN GTK HOVER OVERRIDE)
+   ============================================================================= */
+#workspaces {
+    background-color: #1F2335;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 20px;
+    margin: 0 4px;
+    padding: 0 4px;
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 8px;
     background-color: transparent;
-    color: #ffffff;
+    background-image: none;
+    box-shadow: none;
+    color: #565F89;
+    border-radius: 14px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+/* Default Active / Focused Workspace State */
+#workspaces button.focused,
+#workspaces button.active {
+    background-color: #7AA2F7;
+    background-image: none;
+    box-shadow: none;
+    color: #16161E;
+    font-weight: bold;
 }
 
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
+/* Urgent Workspace State */
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background-color: #F7768E;
+    color: #16161E;
 }
 
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+/* High-Contrast Hover Interactions (Deep Black Pill + Off-White Icon) */
+#workspaces button:hover {
+    background-color: #0F0F14;
+    background-image: none;
+    box-shadow: none;
+    color: #F4EFEA;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
+#workspaces button.focused:hover,
+#workspaces button.active:hover {
+    background-color: #0F0F14;
+    background-image: none;
+    box-shadow: none;
+    color: #F4EFEA;
 }
 
+/* =============================================================================
+   PILL MODULE BASE CONTAINERS (FULL CAPSULE SHAPE)
+   ============================================================================= */
 #window,
-#workspaces {
-    margin: 0 4px;
+#mpris,
+#idle_inhibitor,
+#mode,
+#custom-gpu,
+#custom-cpu,
+#memory,
+#network,
+#wireplumber,
+#clock,
+#tray {
+    padding: 0 12px;
+    background-color: #1F2335;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    color: #C0CAF5;
+    border-radius: 20px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+/* =============================================================================
+   UNIFORM HOVER ELEVATION (RIGHT MODULES HIGHLIGHT TO SAPPHIRE #7AA2F7)
+   ============================================================================= */
+#window:hover,
+#mpris:hover,
+#idle_inhibitor:hover,
+#custom-gpu:hover,
+#custom-cpu:hover,
+#memory:hover,
+#network:hover,
+#wireplumber:hover,
+#clock:hover,
+#tray:hover {
+    background-color: #2F354F;
+    border-color: rgba(122, 162, 247, 0.3);
+    color: #7AA2F7;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+/* =============================================================================
+   MODULE OVERRIDES & ACCENTS
+   ============================================================================= */
+
+/* Active Window Title */
+#window {
+    background-color: #1F2335;
+    color: #C0CAF5;
+    font-weight: bold;
 }
 
-#clock {
-    background-color: #3a3b3d;
+/* Idle Inhibitor Module */
+#idle_inhibitor {
+    padding: 0 10px;
+    margin: 0;
+    min-width: 16px;
+    color: #C0CAF5;
 }
 
-#battery {
-    background-color: #3a3b3d;
+#idle_inhibitor.activated {
+    background-color: #E0AF68;
+    color: #16161E;
+    font-weight: bold;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+/* Mode / Submap Indicator */
+#mode {
+    background-color: #7AA2F7;
+    color: #16161E;
+    font-weight: bold;
 }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #3a3b3d;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #3a3b3d;
-}
-
+/* System Hardware & Network Modules */
+#custom-gpu,
+#custom-cpu,
 #network {
-    background-color: #3a3b3d;
+    color: #C0CAF5;
 }
 
-#network.disconnected {
-    background-color: #f53c3c;
+/* Memory Usage States */
+#memory {
+    color: #C0CAF5;
 }
 
-#pulseaudio {
-    background-color: #3a3b3d;
+#memory.warning {
+    color: #E0AF68;
 }
 
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+#memory.critical {
+    background-color: #F7768E;
+    color: #16161E;
+    font-weight: bold;
 }
 
+/* Audio Volume Control */
 #wireplumber {
-    background-color: #fff0f5;
-    color: #000000;
+    color: #C0CAF5;
 }
 
 #wireplumber.muted {
-    background-color: #f53c3c;
+    background-color: #F7768E;
+    color: #16161E;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
-    min-width: 100px;
+/* Clock Module (Dedicated Accent Anchor) */
+#clock {
+    color: #7AA2F7;
+    font-weight: bold;
 }
 
-#custom-media.custom-spotify {
-    background-color: #66cc99;
+/* MPRIS Media Player Highlight */
+#mpris {
+    color: #C0CAF5;
 }
 
-#custom-media.custom-vlc {
-    background-color: #ffa000;
+#mpris.playing {
+    background-color: #292E42;
+    color: #7AA2F7;
 }
 
-#temperature {
-    background-color: #3a3b3d;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #3a3b3d;
-}
-
+/* System Tray Formatting */
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
 }
 
-#idle_inhibitor {
-    background-color: #3a3b3d;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background-color: #f53c3c;
-}
-
-#mpd.stopped {
-    background-color: #90b1b1;
-}
-
-#mpd.paused {
-    background-color: #51a37a;
-}
-
-#language {
-    background: #ffffff;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state {
-    background: #97e1ad;
-    color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
-    min-width: 16px;
-}
-
-#keyboard-state > label {
-    padding: 0 5px;
-}
-
-#keyboard-state > label.locked {
-    background: rgba(0, 0, 0, 0.2);
-
-    
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
+#tray menu {
+    font-family: sans-serif;
 }
