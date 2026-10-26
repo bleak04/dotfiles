@@ -1,6 +1,7 @@
 /* =============================================================================
-   TOKYO NIGHT MATTE - CAPSULE EDITION
+   WAYBAR - bleak04
    ============================================================================= */
+
 * {
     font-family: "JetBrains Mono Nerd Font", "JetBrainsMono NF", "Inter Nerd Font", "Font Awesome 6 Free", FontAwesome, monospace;
     font-size: 12px;
@@ -12,8 +13,8 @@
 
 /* Base Bar Window Styling */
 window#waybar {
-    background-color: #16161E;
-    color: #C0CAF5;
+    background-color: #0A0D14;
+    color: #E2E8F0;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -46,11 +47,11 @@ button {
 }
 
 /* =============================================================================
-   WORKSPACES MODULE (CAPSULE ROUNDED + CLEAN GTK HOVER OVERRIDE)
+   WORKSPACES MODULE
    ============================================================================= */
 #workspaces {
-    background-color: #1F2335;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    background-color: #121723;
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 20px;
     margin: 0 4px;
     padding: 0 4px;
@@ -61,45 +62,45 @@ button {
     background-color: transparent;
     background-image: none;
     box-shadow: none;
-    color: #565F89;
+    color: #475569;
     border-radius: 14px;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Default Active / Focused Workspace State */
+/* Active / Focused Workspace State (Blue Accent) */
 #workspaces button.focused,
 #workspaces button.active {
-    background-color: #7AA2F7;
+    background-color: #3B82F6;
     background-image: none;
     box-shadow: none;
-    color: #16161E;
+    color: #0A0D14;
     font-weight: bold;
 }
 
 /* Urgent Workspace State */
 #workspaces button.urgent {
-    background-color: #F7768E;
-    color: #16161E;
+    background-color: #EF4444;
+    color: #FFFFFF;
 }
 
-/* High-Contrast Hover Interactions (Deep Black Pill + Off-White Icon) */
+/* Hover Interactions */
 #workspaces button:hover {
-    background-color: #0F0F14;
+    background-color: #1C2436;
     background-image: none;
     box-shadow: none;
-    color: #F4EFEA;
+    color: #FFFFFF;
 }
 
 #workspaces button.focused:hover,
 #workspaces button.active:hover {
-    background-color: #0F0F14;
+    background-color: #60A5FA;
     background-image: none;
     box-shadow: none;
-    color: #F4EFEA;
+    color: #0A0D14;
 }
 
 /* =============================================================================
-   PILL MODULE BASE CONTAINERS (FULL CAPSULE SHAPE)
+   PILL MODULE BASE CONTAINERS
    ============================================================================= */
 #window,
 #mpris,
@@ -113,15 +114,15 @@ button {
 #clock,
 #tray {
     padding: 0 12px;
-    background-color: #1F2335;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    color: #C0CAF5;
+    background-color: #121723;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #E2E8F0;
     border-radius: 20px;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* =============================================================================
-   UNIFORM HOVER ELEVATION (RIGHT MODULES HIGHLIGHT TO SAPPHIRE #7AA2F7)
+   UNIFORM HOVER ELEVATION
    ============================================================================= */
 #window:hover,
 #mpris:hover,
@@ -133,92 +134,81 @@ button {
 #wireplumber:hover,
 #clock:hover,
 #tray:hover {
-    background-color: #2F354F;
-    border-color: rgba(122, 162, 247, 0.3);
-    color: #7AA2F7;
+    background-color: #1C2436;
+    border-color: rgba(59, 130, 246, 0.35);
+    color: #60A5FA;
 }
 
 /* =============================================================================
    MODULE OVERRIDES & ACCENTS
    ============================================================================= */
 
-/* Active Window Title */
 #window {
-    background-color: #1F2335;
-    color: #C0CAF5;
+    background-color: #121723;
+    color: #E2E8F0;
     font-weight: bold;
 }
 
-/* Idle Inhibitor Module */
 #idle_inhibitor {
     padding: 0 10px;
     margin: 0;
     min-width: 16px;
-    color: #C0CAF5;
+    color: #E2E8F0;
 }
 
 #idle_inhibitor.activated {
-    background-color: #E0AF68;
-    color: #16161E;
+    background-color: #3B82F6;
+    color: #0A0D14;
     font-weight: bold;
 }
 
-/* Mode / Submap Indicator */
 #mode {
-    background-color: #7AA2F7;
-    color: #16161E;
+    background-color: #3B82F6;
+    color: #0A0D14;
     font-weight: bold;
 }
 
-/* System Hardware & Network Modules */
 #custom-gpu,
 #custom-cpu,
-#network {
-    color: #C0CAF5;
+#network,
+#clock {
+    color: #E2E8F0;
+    font-weight: 600;
 }
 
-/* Memory Usage States */
 #memory {
-    color: #C0CAF5;
+    color: #E2E8F0;
 }
 
 #memory.warning {
-    color: #E0AF68;
+    color: #FBBF24;
 }
 
 #memory.critical {
-    background-color: #F7768E;
-    color: #16161E;
+    background-color: #EF4444;
+    color: #FFFFFF;
     font-weight: bold;
 }
 
-/* Audio Volume Control */
 #wireplumber {
-    color: #C0CAF5;
+    color: #E2E8F0;
 }
 
 #wireplumber.muted {
-    background-color: #F7768E;
-    color: #16161E;
+    background-color: #EF4444;
+    color: #FFFFFF;
 }
 
-/* Clock Module (Dedicated Accent Anchor) */
-#clock {
-    color: #7AA2F7;
-    font-weight: bold;
-}
-
-/* MPRIS Media Player Highlight */
 #mpris {
-    color: #C0CAF5;
+    color: #E2E8F0;
 }
 
 #mpris.playing {
-    background-color: #292E42;
-    color: #7AA2F7;
+    background-color: #1C2436;
+    color: #3B82F6;
+    border-color: rgba(59, 130, 246, 0.3);
 }
 
-/* System Tray Formatting */
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
