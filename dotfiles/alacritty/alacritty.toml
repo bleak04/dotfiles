@@ -1,5 +1,5 @@
 # ==============================================================================
-# ALACRITTY - TOKYO NIGHT MATTE (CAPSULE EDITION)
+# ALACRITTY - bleak04
 # ==============================================================================
 
 [env]
@@ -59,64 +59,64 @@ thickness = 0.15
 blink_interval = 500
 
 # ------------------------------------------------------------------------------
-# TOKYO NIGHT MATTE COLOR SCHEME
+# COLOR SCHEME
 # ------------------------------------------------------------------------------
 [colors.primary]
-background = "#16161E"
-foreground = "#C0CAF5"
-dim_foreground = "#A9B1D6"
+background = "#0A0D14"
+foreground = "#E2E8F0"
+dim_foreground = "#94A3B8"
 
 [colors.cursor]
-cursor = "#7AA2F7"
+cursor = "#3B82F6"
 
 [colors.vi_mode_cursor]
-cursor = "#BB9AF7"
+cursor = "#60A5FA"
 
 [colors.selection]
-background = "#292E42"
+background = "#121723"
 
 [colors.search.matches]
-background = "#E0AF68"
+background = "#1E293B"
 
 [colors.search.focused_match]
-background = "#7AA2F7"
+background = "#3B82F6"
 
 [colors.footer_bar]
-background = "#1F2335"
-foreground = "#C0CAF5"
+background = "#121723"
+foreground = "#E2E8F0"
 
-# Normal Colors (Tokyo Night Matte + Cool Teal Green Replacement)
+# Normal Colors
 [colors.normal]
-black   = "#15161E"
-red     = "#F7768E"
-green   = "#4FD6BE"  # Refined Cool Teal / Emerald
-yellow  = "#E0AF68"
-blue    = "#7AA2F7"
-magenta = "#BB9AF7"
-cyan    = "#7DCFFF"
-white   = "#A9B1D6"
+black   = "#0A0D14"
+red     = "#EF4444"
+green   = "#10B981"  # Emerald
+yellow  = "#F59E0B"
+blue    = "#3B82F6"  # Celestial Blue
+magenta = "#8B5CF6"
+cyan    = "#06B6D4"
+white   = "#CBD5E1"
 
 # Bright Colors
 [colors.bright]
-black   = "#414868"
-red     = "#F7768E"
-green   = "#73DACA"  # Brighter Cool Teal Highlight
-yellow  = "#E0AF68"
-blue    = "#7AA2F7"
-magenta = "#BB9AF7"
-cyan    = "#7DCFFF"
-white   = "#C0CAF5"
+black   = "#1C2436"
+red     = "#F87171"
+green   = "#34D399"
+yellow  = "#FBBF24"
+blue    = "#60A5FA"  # Bright Celestial Highlight
+magenta = "#A78BFA"
+cyan    = "#22D3EE"
+white   = "#F1F5F9"
 
 # Dimmed Colors
 [colors.dim]
-black   = "#0F0F14"
-red     = "#B15465"
-green   = "#399482"  # Muted Teal
-yellow  = "#A07D4A"
-blue    = "#5673B0"
-magenta = "#856EB0"
-cyan    = "#5993B5"
-white   = "#787D99"
+black   = "#05070A"
+red     = "#991B1B"
+green   = "#065F46"
+yellow  = "#92400E"
+blue    = "#1E40AF"
+magenta = "#5B21B6"
+cyan    = "#155E75"
+white   = "#64748B"
 
 # ------------------------------------------------------------------------------
 # BELL & MOUSE
