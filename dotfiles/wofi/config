@@ -1,0 +1,16 @@
+# Window dimensions & positioning (Original Larger Size)
+width=600
+height=450
+location=center
+show=drun
+prompt=Search...
+filter_title=true
+matching=contains
+
+# Aesthetic Flags
+allow_images=true
+image_size=28
+no_actions=true
+halign=fill
+orientation=vertical
+insensitive=true

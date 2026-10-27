@@ -1,0 +1,80 @@
+/* =============================================================================
+   WOFI - DEEP INDIGO & CELESTIAL BLUE (LINEAR / WARP VIBE)
+   ============================================================================= */
+* {
+    font-family: "JetBrains Mono Nerd Font", "JetBrainsMono NF", "Inter Nerd Font", monospace;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+window {
+    margin: 0px;
+    border: 1px solid #3B82F6;
+    background-color: #0A0D14;
+    border-radius: 12px;
+}
+
+#input {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    color: #E2E8F0;
+    background-color: #121723;
+}
+
+#input:focus {
+    border: 1px solid #3B82F6;
+    box-shadow: none;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: #0A0D14;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: #0A0D14;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    border: none;
+    color: #E2E8F0;
+}
+
+#entry {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+/* Selected Entry (Celestial Blue Accent) */
+#entry:selected {
+    background-color: #3B82F6;
+    border-radius: 8px;
+}
+
+#entry:selected #text {
+    color: #0A0D14;
+    font-weight: bold;
+}
+
+/* Hover Interaction */
+#entry:hover {
+    background-color: #1C2436;
+    border-radius: 8px;
+}
+
+#entry:hover #text {
+    color: #FFFFFF;
+}
