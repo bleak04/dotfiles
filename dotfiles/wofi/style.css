@@ -1,5 +1,5 @@
 /* =============================================================================
-   WOFI - DEEP INDIGO & CELESTIAL BLUE (LINEAR / WARP VIBE)
+   WOFI - bleak04
    ============================================================================= */
 * {
     font-family: "JetBrains Mono Nerd Font", "JetBrainsMono NF", "Inter Nerd Font", monospace;
@@ -58,7 +58,7 @@ window {
     background-color: transparent;
 }
 
-/* Selected Entry (Celestial Blue Accent) */
+/* Selected Entry (Blue Accent) */
 #entry:selected {
     background-color: #3B82F6;
     border-radius: 8px;

@@ -20,7 +20,7 @@
     gap_size = 8
     corner_radius = 12
 
-    # Typography
+    # Font
     font = JetBrains Mono Nerd Font 10
     line_height = 3
     format = "<b>%s</b>\n%b"

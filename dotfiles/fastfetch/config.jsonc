@@ -164,11 +164,10 @@
       "outputColor": "black"
     },
 
-    // --- COLOR PALETTE PILLS ---
+    // --- COLOR PALETTE ---
     {
       "type": "colors",
       "symbol": "circle"
     }
   ]
 }
-

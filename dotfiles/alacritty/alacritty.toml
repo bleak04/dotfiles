@@ -20,7 +20,7 @@ instance = "Alacritty"
 general = "Alacritty"
 
 # ------------------------------------------------------------------------------
-# TYPOGRAPHY
+# FONT
 # ------------------------------------------------------------------------------
 [font]
 size = 11.5
@@ -102,7 +102,7 @@ black   = "#1C2436"
 red     = "#F87171"
 green   = "#34D399"
 yellow  = "#FBBF24"
-blue    = "#60A5FA"  # Bright Celestial Highlight
+blue    = "#60A5FA"  # Bright Highlight
 magenta = "#A78BFA"
 cyan    = "#22D3EE"
 white   = "#F1F5F9"
